@@ -26,26 +26,28 @@
                         <Label layoutX="177.0" layoutY="120.0" text="Telephone:" />
                         <Button fx:id="addF" layoutX="263.0" layoutY="173.0" mnemonicParsing="false" onAction="#addFriend" text="Add Friend" />
                         <TextField fx:id="name" layoutX="264.0" layoutY="63.0" />
-                        <TextField fx:id="phone" layoutX="264.0" layoutY="116.0" />
+                        <TextField fx:id="area" layoutX="264.0" layoutY="116.0" prefHeight="27.0" prefWidth="47.0" />
+                        <TextField fx:id="numMid" layoutX="319.0" layoutY="116.0" prefHeight="27.0" prefWidth="47.0" />
+                        <TextField fx:id="numEnd" layoutX="376.0" layoutY="116.0" prefHeight="27.0" prefWidth="55.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Friend Book">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ListView fx:id="listFriends" onMouseClicked="#displayFriend" prefHeight="335.0" prefWidth="184.0" />
-                        <Button layoutX="132.0" layoutY="335.0" mnemonicParsing="false" text="Delete" />
-                        <Label layoutX="327.0" text="Friend Info">
+                        <Button fx:id="delButton" layoutX="126.0" layoutY="335.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete" />
+                        <Label layoutX="324.0" layoutY="-1.0" text="Friend Info">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="286.0" layoutY="73.0" text="Name" />
-                        <Label layoutX="286.0" layoutY="118.0" text="Telephone" />
-                        <Label fx:id="dname" layoutX="411.0" layoutY="73.0" />
-                        <Label fx:id="dphone" layoutX="411.0" layoutY="118.0" />
+                        <Label layoutX="217.0" layoutY="73.0" text="Name:" />
+                        <Label layoutX="217.0" layoutY="118.0" text="Telephone:" />
+                        <Label fx:id="dname" layoutX="300.0" layoutY="73.0" />
+                        <Label fx:id="dphone" layoutX="300.0" layoutY="118.0" />
                      </children>
                   </AnchorPane>
             </content>

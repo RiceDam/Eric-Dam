@@ -14,12 +14,15 @@ public class Controller {
     public ListView listFriends;
 
     public void createFriend(ActionEvent actionEvent) {
-        listFriends.getItems().add(new Friend(getName.getText(), getPhone.getText()));
+        //Adds the friend to the list on the program window
+        Friend f = new Friend(getName.getText(),getPhone.getText());
+        listFriends.getItems().add(f);
         getName.clear();
         getPhone.clear();
     }
 
     public void saveFriend(ActionEvent actionEvent) throws IOException {
+        // Saves list of friends to a text file
         ObservableList<Friend> myList = listFriends.getItems();
         for(Friend f: myList) {
             f.writeToFile();
@@ -28,6 +31,7 @@ public class Controller {
     }
 
     public void loadFriends(ActionEvent actionEvent) throws IOException{
+        //Loads the list of friends
         listFriends.getItems().clear();
         ArrayList<Friend> friends = CreateFriend.createAllFriends("friends.txt");
         for (Friend f: friends) {

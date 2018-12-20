@@ -1,7 +1,6 @@
 package sample;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ public class CreateFriend {
     private static ArrayList<Friend> friends = new ArrayList<>();
 
     public static ArrayList createAllFriends(String fileName) throws IOException {
+        //Creates an ArrayList with all the friends in it
         fr = new FileReader("friends.txt");
         br = new BufferedReader(fr);
         String line;
@@ -32,8 +32,10 @@ public class CreateFriend {
 
     public static void parseFriend(String s) {
         int pos = 0;
+        int count = 0;
         String name = "";
         String phone = "";
+        //Checks each line in the text file and adds them to the string
         for (int i = 0; i < s.length(); i++) {
             if (s.substring(i,i+1).equals(",")) {
                 pos = i;
@@ -41,8 +43,21 @@ public class CreateFriend {
                 phone = s.substring(pos+1);
             }
         }
-        if (Friend.compareFriends(Friend(name, phone) == false)) {
-            friends.add(new Friend(name, phone));
+        //Adds friend to the friends list if there is no duplicate
+        Friend n = new Friend(name,phone);
+        if(friends.size() > 0) {
+            for(int i=0; i<friends.size(); i++) {
+                if(friends.get(i).compareFriends(n)) {
+                    count+=1;
+                }
+            }
+            if (count < 1) {
+                friends.add(n);
+            }
+        }
+        else {
+            friends.add(n);
+
         }
     }
 }

@@ -7,6 +7,7 @@ import java.io.IOException;
 public class Friend {
     String name;
     String phone;
+    public boolean f;
 
     Friend(String name, String phone) {
         this.name = name;
@@ -14,6 +15,7 @@ public class Friend {
     }
 
     public void writeToFile() throws IOException {
+        //Method to write the list of friends to a file
         FileWriter fw = new FileWriter("friends.txt", true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(name +",\r");
@@ -28,9 +30,12 @@ public class Friend {
     }
 
     public boolean compareFriends(Friend f) {
+        //Compares if there are duplicates in the list
         if (this.name.equals(f.name)) {
             return true;
         }
-        else return false;
+        else{
+            return false;
+        }
     }
 }

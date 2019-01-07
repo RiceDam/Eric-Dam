@@ -24,8 +24,8 @@ public class Main extends Application {
     public static void main(String[] args) throws IOException {
         launch(args);
         //Clears text file after each run
-        FileWriter fw = new FileWriter("friends.txt");
+        /*FileWriter fw = new FileWriter();
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.close();
+        bw.close();*/
     }
 }

@@ -14,7 +14,7 @@ public class CreateFriend {
 
     public static ArrayList createAllFriends(String fileName) throws IOException {
         //Creates an ArrayList with all the friends in it
-        fr = new FileReader("friends.txt");
+        fr = new FileReader(fileName +".txt");
         br = new BufferedReader(fr);
         String line;
         String friendString = "";

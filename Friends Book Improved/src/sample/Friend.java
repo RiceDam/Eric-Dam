@@ -7,16 +7,16 @@ import java.io.IOException;
 public class Friend {
     String name;
     String phone;
-    public boolean f;
+
 
     Friend(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }
 
-    public void writeToFile() throws IOException {
+    public void writeToFile(String fileName) throws IOException {
         //Method to write the list of friends to a file
-        FileWriter fw = new FileWriter("friends.txt", true);
+        FileWriter fw = new FileWriter(fileName + ".txt", true);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(name +",\r");
         bw.write(phone+"\r");
@@ -31,7 +31,7 @@ public class Friend {
 
     public boolean compareFriends(Friend f) {
         //Compares if there are duplicates in the list
-        if (this.name.equals(f.name)) {
+        if (this.name.toLowerCase().equals(f.name.toLowerCase())) {
             return true;
         }
         else{

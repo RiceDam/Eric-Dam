@@ -27,11 +27,11 @@ public class Main {
         if(n.left == 0 && n.right == 0) {
             System.out.println(n.id);
         }
-        leaves(findN(n.left, nodes));
-        leaves(findN(n.right,nodes));
+        leaves(findN(n.left));
+        leaves(findN(n.right));
 
     }
-    public static Node findN(int i, ArrayList<Node> node) {
+    public static Node findN(int i) {
         for(Node n: nodes) {
             if(n.id == i) {
                 return n;
